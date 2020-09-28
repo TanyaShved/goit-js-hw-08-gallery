@@ -52,6 +52,9 @@ const closeBtn = document.querySelector('button[data-action="close-lightbox"]');
 function onModalOpenClick(evt) {
   evt.preventDefault();
 
+  if (evt.target.nodeName !== 'IMG') {
+    return;
+  }
   modalIsOpen.classList.add('is-open');
   imgClick.setAttribute('src', `${evt.target.getAttribute('data-source')}`);
 }
